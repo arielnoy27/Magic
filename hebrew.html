@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="אריאל נוי - קוסם ומנטליסט מקצועי. הופך אירועים לבלתי נשכחים עם מופעי קסם מותאמים אישית לאירועי חברה, חתונות ומסיבות פרטיות.">
+    <meta name="keywords" content="קוסם, מנטליסט, אירועי חברה, מסיבות פרטיות, בידור, אריאל נוי, מופע קסם, קוסם ישראל">
+    <meta name="author" content="Ariel Noy">
+    <title>אריאל נוי | קוסם ומנטליסט</title>
+    <link rel="icon" type="image/png" href="logo-mark.png">
+    <link rel="stylesheet" href="base.css">
+    <script>
+        /* Fetch exactly one of desktop.css / mobile.css — never both —
+           using the same 1101px boundary as common.js's device-script
+           loader. Runs synchronously while <head> is still parsing, so
+           it blocks first paint the same way a static <link> would:
+           no flash of unstyled content. */
+        (function () {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = window.matchMedia('(min-width: 1101px)').matches ? 'desktop.css' : 'mobile.css';
+            document.head.appendChild(link);
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Heebo:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">
+                <img src="logo-mark.png" alt="" class="nav-brand__mark">
+                <span class="nav-brand__word">
+                    <span class="nav-brand__name">ARIEL NOY</span>
+                    <span class="nav-brand__tag">קוסם ומנטליסט</span>
+                </span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home"         class="nav-link">בית</a></li>
+                <li><a href="#experience"   class="nav-link">החוויה</a></li>
+                <li><a href="#shows"        class="nav-link">מופעים</a></li>
+                <li><a href="#gallery"      class="nav-link">גלריה</a></li>
+                <li><a href="#testimonials" class="nav-link">המלצות</a></li>
+                <li><a href="#faq"          class="nav-link">שאלות</a></li>
+                <li><a href="#about"        class="nav-link">אודות</a></li>
+                <li><a href="#contact"      class="nav-link">יצירת קשר</a></li>
+                <li class="nav-menu__lang-item">
+                    <a href="index.html" class="nav-link nav-menu__lang-link">English</a>
+                </li>
+                
+            </ul>
+
+            <div class="nav-actions">
+                <a href="index.html" class="btn-lang" title="Switch to English">EN</a>
+                <a href="https://api.whatsapp.com/send?phone=972527590190" target="_blank" rel="noopener" class="btn-whatsapp" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="פתח תפריט" aria-expanded="false" aria-controls="navMenu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="grid-wash" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+            <div class="hero-content">
+                <p class="hero-eyebrow">
+                    <span class="hero-eyebrow-line"></span>
+                   קוסם //  מהנדס אלגוריתמים // מנטליסט
+                </p>
+                <h1 class="hero-title">אריאל<br>נוי</h1>
+                <p class="hero-tagline">קסם בידיים, מנטליזם בראש — למופע שמצפים בו ליותר.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn--gold">הזמינו את המופע</a>
+                    <a href="#experience" class="btn btn--ghost">צפו בקטע מהמופע</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-visual__halo" aria-hidden="true"></div>
+                <div class="hero-visual__ring" aria-hidden="true"></div>
+                <div class="hero-visual__frame reg-corner">
+                    <img src="0.png" alt="אריאל נוי פורס חפיסת קלפים במהלך מופע" class="hero-visual__photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="experience-grid">
+                <div class="experience-content" data-reveal>
+                    <p class="eyebrow"><span class="mark">▲</span> החוויה</p>
+                    <h2 class="section-title">חד, אינטראקטיבי,<br>מותאם לחלל האירוע</h2>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-laugh"></i></span>
+                            <span class="feature-label">שילוב הומור שנון וקסמים אינטליגנטיים</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-user-check"></i></span>
+                            <span class="feature-label">התאמת תכנים לאירועים</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-users"></i></span>
+                            <span class="feature-label">שיתוף הקהל</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-language"></i></span>
+                            <span class="feature-label">עברית ואנגלית</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="experience-video" data-reveal>
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://youtu.be/vUmVnduBFHs"
+                            title="אריאל נוי – קטע מופע קסם"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SHOWS ===================== -->
+    <section class="shows-section" id="shows">
+        <div class="container">
+            <div class="section-head section-head--center" data-reveal>
+                <p class="eyebrow" style="justify-content:center"><span class="mark">▲</span> סוגי מופע</p>
+                <h2 class="section-title">שלוש צורות מופע, סטנדרט אחד</h2>
+                <p class="section-subtitle">בידור מקצועי המותאם לאירוע, למקום ולרשימת האורחים שלכם.</p>
+            </div>
+
+            <div class="shows-grid" id="showsGrid" data-reveal>
+                <article class="show-card">
+                    <div class="show-card-accent"></div>
+                    <div class="show-card-icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <h3 class="show-card-title">מופע קלוז-אפ</h3>
+                    <p class="show-card-body">קסם אינטימי ואינטראקטיבי המבוצע ממש לנגד עיניכם. מושלם לשעות קוקטייל, בידור בין שולחן לשולחן בארוחות ערב, או אירועי מינגלינג. צפו בקלפים, מטבעות וחפצים יומיומיים המאתגרים את ההיגיון במרחק סנטימטרים ספורים מהפנים שלכם — גישה אישית שמעניקה לכל אורח רגע בלתי נשכח משלו.</p>
+                </article>
+
+                <article class="show-card">
+                    <div class="show-card-accent"></div>
+                    <div class="show-card-icon"><i class="fas fa-building"></i></div>
+                    <h3 class="show-card-title">אירועי חברה</h3>
+                    <p class="show-card-body">שדרגו את מפגש החברה שלכם עם בידור מתוחכם שישבור את הקרח ויעניק אנרגיה לצוות שלכם. אידיאלי לכנסים, השקות מוצרים, חגיגות חברה ואירועי גיבוש צוות. ניתן להתאים אישית את המופעים כך שיכללו את המסרים, הערכים או נושאי המוצר של החברה שלכם.</p>
+                </article>
+
+                <article class="show-card">
+                    <div class="show-card-accent"></div>
+                    <div class="show-card-icon"><i class="fas fa-champagne-glasses"></i></div>
+                    <h3 class="show-card-title">אירועים פרטיים</h3>
+                    <p class="show-card-body">מימי הולדת וימי נישואין ועד בר/בת מצווה ומסיבות חג, כל מופע מותאם לחגיגה שלכם. ניתן להתאים את המופע לכל גודל מקום ומספר אורחים, עם תוכן המתאים לקהל היעד הספציפי שלכם — כך שהרגע נשאר אישי, לא גנרי.</p>
+                </article>
+            </div>
+
+            <div class="carousel-dots" id="showsDots" aria-label="ניווט מופעים">
+                <button class="carousel-dot active" aria-label="מופע 1"></button>
+                <button class="carousel-dot"        aria-label="מופע 2"></button>
+                <button class="carousel-dot"        aria-label="מופע 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== GALLERY ===================== -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <p class="eyebrow"><span class="mark">▲</span> גלריה</p>
+                <h2 class="section-title">מהבמה ועד מקרוב</h2>
+            </div>
+            <div class="gallery-grid" data-reveal>
+                <figure class="gallery-item">
+                    <img src="22.png" alt="אריאל נוי מחזיק קלף יחיד" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="1.JPG" alt="קסמי קלוז-אפ עבור אורח באירוע" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="6.JPG" alt="הרצאה עסקית עם לוח ניבויים מנטליסטי" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="9.JPG" alt="תרגיל מנטליזם עם קוביות הונגריות" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="11.png" alt="פריסת קלפים מדורגת" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="2.JPG" alt="מופע מנטליזם על הבמה עם תאורה דרמטית" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="8.JPG" alt="אריאל נוי בקשר עם הקהל" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="5.jpg" alt="טריק קלפים בזמן ביצוע" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-head section-head--center" data-reveal>
+                <p class="eyebrow" style="justify-content:center"><span class="mark">▲</span> מהלקוחות</p>
+                <h2 class="section-title">מה הלקוחות אומרים</h2>
+            </div>
+
+            <div class="testimonials-carousel" data-reveal>
+                <button class="carousel-btn carousel-btn--prev" id="prevBtn" aria-label="הקודם">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="carousel-track-wrapper">
+                    <div class="testimonials-track" id="testimonialsSlider">
+
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-right testimonial-quote" aria-hidden="true"></i>
+                            <p>״אריאל הופיע בכנס השנתי של חברתנו והיה לכוכב של הערב! שילוב ההומור והקסמים המדהימים שלו שמר את כל הצוות שלנו מעורב ודיבר על כך שבועות לאחר מכן. האופן שבו שילב את ערכי החברה שלנו במופע שלו היה גאוני. מקצועי, דייקן ומדהים.״</p>
+                            <footer class="testimonial-author">
+                                <strong>שרה כהן</strong>
+                                <span>מנכ״ל, TechVision Ltd</span>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-right testimonial-quote" aria-hidden="true"></i>
+                            <p>״שכרנו את אריאל לשעת קוקטייל החתונה שלנו וזו הייתה ללא ספק ההחלטה הכי טובה שקיבלנו! האורחים שלנו עדיין מתלהבים מהקסם. הוא גרם לכולם להרגיש מיוחדים, והתמונות של פניהם המומים של האנשים הן לא יסולא בפז.״</p>
+                            <footer class="testimonial-author">
+                                <strong>מיכאל ורחל לוי</strong>
+                                <span>זוג חתונה</span>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-right testimonial-quote" aria-hidden="true"></i>
+                            <p>״כמתכנן אירועים, עבדתי עם בדרנים רבים, אבל אריאל בולט. המקצועיות שלו ללא דופי — מהייעוץ הראשוני ועד להופעה הסופית. הוא קרא את האולם בצורה מושלמת, התאים את המופע תוך כדי תנועה, והקסים לחלוטין את האורחים שלנו.״</p>
+                            <footer class="testimonial-author">
+                                <strong>דוד גולדשטיין</strong>
+                                <span>מנהל אירועים, Prestige Events</span>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-right testimonial-quote" aria-hidden="true"></i>
+                            <p>״אריאל הופיע בבר המצווה של בני ויצר זיכרונות שננצור לנצח. הוא שיתף את הילדים והמבוגרים בסגנונות שונים של קסמים. קטע המנטליזם עם המבוגרים היה מרשים במיוחד — איך הוא ידע את הדברים האלה?!״</p>
+                            <footer class="testimonial-author">
+                                <strong>מרים שפירו</strong>
+                                <span>מארחת אירוע פרטי</span>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-right testimonial-quote" aria-hidden="true"></i>
+                            <p>״הבאנו את אריאל לפסגת הטכנולוגיה הבינלאומית שלנו עם משתתפים מ-15 מדינות. היכולת שלו להופיע בצורה חלקה גם באנגלית וגם בעברית הפכו אותו למושלם לקהל שלנו. סקרי המשוב שלנו הזכירו אותו יותר מכל דובר אחר.״</p>
+                            <footer class="testimonial-author">
+                                <strong>ד״ר יעל רוזנברג</strong>
+                                <span>מארגנת כנסים, GlobalTech Summit</span>
+                            </footer>
+                        </blockquote>
+
+                    </div>
+                </div>
+
+                <button class="carousel-btn carousel-btn--next" id="nextBtn" aria-label="הבא">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+        </div>
+    </section>
+
+    <!-- ===================== CLIENTS ===================== -->
+    <section class="clients-section" id="clients">
+        <div class="container">
+            <div class="section-head section-head--center" data-reveal>
+                <p class="eyebrow" style="justify-content:center"><span class="mark">▲</span> לקוחות</p>
+                <h2 class="section-title">בין לקוחותינו</h2>
+                <p class="section-subtitle">גאה לבדר צוותים ואורחים בחברות המובילות הללו</p>
+            </div>
+            <ul class="clients-grid" data-reveal>
+                <li class="client-item"><span>Google</span></li>
+                <li class="client-item"><span>Microsoft</span></li>
+                <li class="client-item"><span>Intel</span></li>
+                <li class="client-item"><span>Amazon</span></li>
+                <li class="client-item"><span>Facebook</span></li>
+                <li class="client-item"><span>Wix</span></li>
+                <li class="client-item"><span>Mobileye</span></li>
+                <li class="client-item"><span>Google</span></li>
+                <li class="client-item"><span>Microsoft</span></li>
+                <li class="client-item"><span>Intel</span></li>
+                <li class="client-item"><span>Amazon</span></li>
+                <li class="client-item"><span>Facebook</span></li>
+                <li class="client-item"><span>Wix</span></li>
+                <li class="client-item"><span>Mobileye</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <p class="eyebrow"><span class="mark">▲</span> לפני ההזמנה</p>
+                <h2 class="section-title">שאלות נפוצות</h2>
+            </div>
+
+            <div class="faq-list" data-reveal>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        כמה זמן מראש כדאי לי להזמין?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>לזמינות אופטימלית, אני ממליץ להזמין 3–6 חודשים מראש, במיוחד לעונות שיא (יוני–אוגוסט ונובמבר–דצמבר). עם זאת, אני תמיד עושה כמיטב יכולתי להיענות לבקשות של הרגע האחרון. אל תהססו לפנות ללא קשר לזמן — תמיד אנסה לאפשר זאת!</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        באילו סוגי אירועים אתה מופיע?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>אני מופיע במגוון רחב של אירועים, כולל אירועים עסקיים, כנסים, השקות מוצרים, אירועי גיבוש צוות, חתונות, מסיבות יום הולדת, בר ובת מצווה, ימי נישואין, מסיבות חג, גיוסי כספים וחגיגות פרטיות. כל הופעה מותאמת לטון ולמטרות הספציפיים של האירוע שלכם.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        כמה זמן נמשכת הופעה טיפוסית?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>אורכי ההופעות גמישים לחלוטין. סטים של קסמים בקלוז-אפ נמשכים בדרך כלל בין שעה לשלוש שעות. מופעי במה יכולים לנוע בין מופעי פתיחה בני 20 דקות ועד הופעות ראשיות מלאות בנות 45–90 דקות. במהלך הייעוץ, נדון בלוח הזמנים של האירוע ונקבע את משך הזמן והפורמט המושלמים.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        האם אתה מבצע קסמים בתקריב, מופעי במה, או שניהם?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>שניהם! לקוחות רבים בוחרים בשילוב: קסמים בקלוז-אפ במהלך קוקטיילים/ארוחת ערב, ולאחר מכן הופעה על הבמה כאירוע המרכזי. אעזור לכם לבחור את הפורמט המושלם בהתבסס על המקום, גודל הקהל וזרימת האירוע.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        מה אתם צריכים מהמקום?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>עבור קסמים בתקריב אני עצמאי לחלוטין וזקוק למינימום מקום. עבור מופעי במה, אני בדרך כלל זקוק לאזור הופעה (לפחות 3×4 מטרים), גישה למערכת סאונד עם מיקרופון אלחוטי ותאורה בסיסית. אספק מדריך טכני מפורט לאחר שנדון באירוע הספציפי שלכם.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        האם אתה נוסע לאירועים?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>בהחלט! אני מופיע ברחבי ישראל וזמין להזמנות בינלאומיות. הופעתי ברחבי אירופה, צפון אמריקה ואזורים אחרים. דמי נסיעה עשויים לחול בהתאם למיקום, עליהם נדון במהלך תהליך ההזמנה.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        האם תוכל להתאים את המופע לאירוע הספציפי שלנו?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>כן! התאמה אישית היא אחת מההתמחויות שלי ומה שמייחד את ההופעות שלי. עבור אירועים עסקיים אני יכול לשלב את המסרים של החברה שלכם ונושאי המוצר במופע. עבור אירועים פרטיים אני מתאים תוכן בהתאם לתחומי העניין של אורח הכבוד.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        באילו שפות אתה מופיע?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>אני מופיע שוטף באנגלית ובעברית, ויכול לעבור בצורה חלקה בין שפות או להופיע בשתיהן במהלך אותה הופעה. אני יכול גם להתאים את ההופעה שלי כך שתהיה ויזואלית ואוניברסלית עבור קהלים בעלי רקע שפה מעורב.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        איך אני מזמין אותך לאירוע שלי?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>ההזמנה פשוטה! התחילו על ידי יצירת קשר דרך טופס יצירת הקשר באתר זה, באמצעות דוא״ל, טלפון או וואטסאפ. נדון בפרטי האירוע ואשלח הצעה מותאמת אישית. לאחר שנסכים על הפרטים, מקדמה תבטיח את התאריך שלכם.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        מהי מדיניות הביטול שלך?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>ביטולים יותר מ-90 יום לפני האירוע יקבלו החזר כספי מלא בניכוי המקדמה. ביטולים 60–90 יום לפני יקבלו החזר של 50%. ביטולים פחות מ-60 יום לפני האירוע יאבדו את התשלום המלא. שינויי תאריך בדרך כלל קלים יותר להתאמה מאשר ביטולים מוחלטים.</p>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <p class="eyebrow"><span class="mark">▲</span> הקוסם</p>
+                <h2 class="section-title">אודות אריאל נוי</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image-wrap reg-corner" data-reveal>
+                    <img src="7.png" alt="אריאל נוי – קוסם ומנטליסט" class="about-photo">
+                    <span class="spec-tag">B.Sc ELECTRICAL ENG. — BAR ILAN UNIV.</span>
+                </div>
+
+                <div class="about-content" data-reveal>
+                    <div class="about-tabs" role="tablist">
+                        <button class="tab-btn active" data-tab="ariel" role="tab" aria-selected="true">אודות אריאל</button>
+                        <button class="tab-btn"        data-tab="show"  role="tab" aria-selected="false">אודות המופע</button>
+                    </div>
+
+                    <div class="tab-panel active" id="tab-ariel" role="tabpanel">
+                        <p>אריאל נוי סיים בהצטיינות תואר ראשון בהנדסת חשמל מאוניברסיטת בר אילן. הוא קוסם ומנטליסט למעלה מעשור, לאחר מאות מופעים פיתח את המופע הייחודי שלו.</p>
+                        <p>הוא יצר את הקסם שלו תוך שילוב של כלים מעולם הקסם, הפסיכולוגיה וההנדסה. האפקטים מלאי הפתעות, אינטראקציה עם הקהל, צחוק והשתאות.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-show" role="tabpanel">
+                        <p>המופע מבוסס על טכניקות מעולם הקסם, הפסיכולוגיה וההנדסה — מעוצב כך שיערב את הקהל באופן מתמיד. זהו מופע מתוחכם, מבדר ואינטראקטיבי.</p>
+                        <p>המופע מודולרי ומעוצב בהתאם לדרישות הלקוח. ניתן לשלוט באורך המופע ובסוג האפקטים ולהתאים קסמים בהתאמה אישית לכל לקוח.</p>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <span class="stat-number num">1000+</span>
+                            <span class="stat-label">מופעים</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number num">12+</span>
+                            <span class="stat-label">שנות ניסיון</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number num">300+</span>
+                            <span class="stat-label">לקוחות עסקיים</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-head section-head--center" data-reveal>
+                <p class="eyebrow" style="justify-content:center"><span class="mark">▲</span> בואו נדבר</p>
+                <h2 class="section-title">בואו ניצור קסם יחד</h2>
+                <p class="section-subtitle">מוכנים להפוך את האירוע שלכם לבלתי נשכח? צרו קשר עוד היום.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info" data-reveal>
+                    <h3 class="contact-info-heading">פרטי קשר</h3>
+
+                    <div class="contact-item">
+                        <span class="contact-item-icon"><i class="fas fa-phone"></i></span>
+                        <div>
+                            <strong>טלפון</strong>
+                            <a href="tel:+972527590190">‎+972-52-759-0190</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-item-icon"><i class="fas fa-envelope"></i></span>
+                        <div>
+                            <strong>אימייל</strong>
+                            <a href="mailto:ariel@arielnoy.com">ariel@arielnoy.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <div>
+                            <strong>מיקום</strong>
+                            <span>ישראל (זמין ברחבי העולם)</span>
+                        </div>
+                    </div>
+
+                    <a href="https://api.whatsapp.com/send?phone=972527590190" target="_blank" rel="noopener" class="btn btn--whatsapp btn--block">
+                        <i class="fab fa-whatsapp"></i> צ׳אט בוואטסאפ
+                    </a>
+
+                    <div class="contact-social">
+                        <p class="contact-social-label">עקבו אחריי</p>
+                        <div class="social-row">
+                            <a href="https://www.facebook.com/ariel.noy.5"       target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/arielnoymagic/"    target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@arielnoymagic"       target="_blank" rel="noopener" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://www.youtube.com/@1arielnoy/featured" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm" method="POST" action="https://formspree.io/f/xkoqwpee" novalidate data-reveal>
+                    <h3 class="contact-form-heading">שלח לי הודעה</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">שם מלא <abbr title="שדה חובה">*</abbr></label>
+                            <input type="text" id="fullName" name="fullName" placeholder="השם המלא שלך" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventType">סוג האירוע <abbr title="שדה חובה">*</abbr></label>
+                            <select id="eventType" name="eventType" required>
+                                <option value="">בחר סוג אירוע</option>
+                                <option value="corporate">אירוע חברה</option>
+                                <option value="wedding">חתונה</option>
+                                <option value="private">מסיבה פרטית</option>
+                                <option value="bar-mitzvah">בר/בת מצווה</option>
+                                <option value="birthday">יום הולדת</option>
+                                <option value="other">אחר</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">אימייל <abbr title="שדה חובה">*</abbr></label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">טלפון <abbr title="שדה חובה">*</abbr></label>
+                            <input type="tel" id="phone" name="phone" placeholder="‎050-123-4567" required autocomplete="tel">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group--full">
+                        <label for="message">ספר לי על האירוע שלך <abbr title="שדה חובה">*</abbr></label>
+                        <textarea id="message" name="message" rows="6" placeholder="תאריך, מיקום, מספר אורחים, ובקשות מיוחדות…" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--gold btn--submit">
+                        <i class="fas fa-paper-plane"></i> שלח הודעה
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <img src="logo-mark.png" alt="" class="footer-brand__mark">
+                <span class="footer-brand__word">
+                    <span class="footer-brand__name">אריאל נוי</span>
+                    <span class="footer-brand__tag">קוסם ומנטליסט</span>
+                </span>
+            </div>
+            <p class="footer-tagline">מהנדס אלגוריתמים - דיוק מייצר אשליה </p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/ariel.noy.5"       target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/arielnoymagic/"    target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@arielnoymagic"       target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@1arielnoy/featured" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=972527590190" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 אריאל נוי. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+</body>
+</html>

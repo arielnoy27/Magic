@@ -1,0 +1,78 @@
+/* ============================================================
+   ARIEL NOY — Magician & Mentalist
+   desktop.css | DESKTOP-ONLY — wide screens, hover, hover-driven
+   motion. Loaded only when the viewport is 1101px or wider
+   (see the <link media="(min-width: 1101px)"> in the HTML head).
+
+   Everything here is additive polish layered on top of
+   base.css: every rule in this file includes a real `:hover`,
+   which simply cannot fire on a touchscreen, so none of it is
+   missed on mobile. A handful of these rules also list
+   `:focus-visible` / `:focus-within` as an alternative trigger
+   (e.g. tabbing to the nav logo) — that's intentionally kept
+   with its matching hover rule rather than duplicated into
+   base.css, so on a touch device those specific decorative
+   flourishes (a logo micro-rotate, a card spotlight glow) simply
+   don't appear even via keyboard. Nothing functional depends on
+   them: the real focus ring (:focus-visible outline in base.css)
+   and every click/tap/submit flow are unaffected.
+
+   Editing this file can never change mobile.css's layout rules
+   or common.js/mobile.js's behaviour — it only ever adds
+   :hover-gated visual flourishes on top of the shared foundation.
+   ============================================================ */
+
+/* ---- 4. Buttons ---- */
+.btn--gold:hover { transform: translateY(-2px); box-shadow: 0 14px 34px var(--gold-glow); }
+.btn--ghost:hover { border-color: var(--gold); color: var(--gold); }
+.btn--whatsapp:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(37,211,102,0.35); }
+
+/* ---- 5. Navigation ---- */
+.nav-brand:hover .nav-brand__mark, .nav-brand:focus-visible .nav-brand__mark { transform: rotate(-8deg) scale(1.08); }
+.nav-link:hover, .nav-link:focus-visible { color: var(--ink); }
+.nav-link:hover::after, .nav-link:focus-visible::after { width: 100%; }
+.btn-lang:hover { color: var(--gold); border-color: var(--gold); }
+.btn-whatsapp:hover { transform: scale(1.08); }
+
+/* ---- 7. Experience ---- */
+.video-wrapper:hover, .video-wrapper:focus-within {
+    transform: translateY(-4px);
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+    border-color: var(--gold-deep);
+}
+
+/* ---- 8. Shows — card lift + cursor spotlight (tilt itself is
+   applied inline by initCardInteractions() in this file's
+   companion desktop.js, gated the same way via matchMedia) ---- */
+.show-card:hover, .show-card:focus-within {
+    transform: translateY(-6px);
+    filter: drop-shadow(0 20px 34px rgba(0, 0, 0, 0.35));
+    border-color: var(--line-strong);
+}
+.show-card:hover::before, .show-card:focus-within::before { opacity: 1; }
+
+/* ---- 9. Gallery ---- */
+.gallery-item:hover img { transform: scale(1.06); filter: grayscale(0%); }
+.gallery-item:hover .gallery-overlay,
+.gallery-item:focus-visible .gallery-overlay { opacity: 1; background: rgba(10,14,20,0.42); }
+
+/* ---- 10. Testimonials ---- */
+.carousel-btn:hover, .carousel-btn:focus-visible { border-color: var(--gold); color: var(--gold); }
+
+/* ---- 11. Clients ---- */
+.client-item:hover span { color: var(--gold); }
+
+/* ---- 13. About ---- */
+.about-image-wrap:hover .about-photo { transform: scale(1.03) translateY(-4px); }
+
+/* ---- 14. Contact ---- */
+.contact-item a:hover { color: var(--gold); }
+.social-icon:hover, .social-icon:focus-visible { border-color: var(--gold); color: var(--gold); }
+.contact-form:hover::before, .contact-form:focus-within::before { opacity: 1; }
+
+/* ---- 15. Footer ---- */
+.footer-brand:hover .footer-brand__mark { transform: rotate(-8deg) scale(1.08); }
+.footer-social a:hover, .footer-social a:focus-visible { border-color: var(--gold); color: var(--gold); }
+
+/* ---- 17. CTA shine sweep trigger ---- */
+.btn--gold:hover::before { transform: translateX(130%); }

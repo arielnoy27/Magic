@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ariel Noy — professional magician and mentalist based in Israel, performing sophisticated close-up magic and mentalism for corporate events, conferences, weddings, and private celebrations worldwide.">
+    <meta name="keywords" content="magician, mentalist, corporate entertainment, event magician Israel, Ariel Noy, close-up magic, mind reader">
+    <meta name="author" content="Ariel Noy">
+    <title>Ariel Noy | Magician &amp; Mentalist</title>
+    <link rel="icon" type="image/png" href="logo-mark.png">
+    <link rel="stylesheet" href="base.css">
+    <script>
+        /* Fetch exactly one of desktop.css / mobile.css — never both —
+           using the same 1101px boundary as common.js's device-script
+           loader. Runs synchronously while <head> is still parsing, so
+           it blocks first paint the same way a static <link> would:
+           no flash of unstyled content. */
+        (function () {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = window.matchMedia('(min-width: 1101px)').matches ? 'desktop.css' : 'mobile.css';
+            document.head.appendChild(link);
+        })();
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Heebo:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">
+                <img src="logo-mark.png" alt="" class="nav-brand__mark">
+                <span class="nav-brand__word">
+                    <span class="nav-brand__name">ARIEL NOY</span>
+                    <span class="nav-brand__tag">Magician &amp; Mentalist</span>
+                </span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home"         class="nav-link">Home</a></li>
+                <li><a href="#experience"   class="nav-link">Experience</a></li>
+                <li><a href="#shows"        class="nav-link">Shows</a></li>
+                <li><a href="#gallery"      class="nav-link">Gallery</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#faq"          class="nav-link">FAQ</a></li>
+                <li><a href="#about"        class="nav-link">About</a></li>
+                <li><a href="#contact"      class="nav-link">Contact</a></li>
+                <li class="nav-menu__lang-item">
+                    <a href="hebrew.html" class="nav-link nav-menu__lang-link">עברית</a>
+                </li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="hebrew.html" class="btn-lang" title="Switch to Hebrew">HE</a>
+                <a href="https://api.whatsapp.com/send?phone=972527590190" target="_blank" rel="noopener" class="btn-whatsapp" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="home">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="grid-wash" aria-hidden="true"></div>
+
+        <div class="hero-inner">
+            <div class="hero-content">
+                <p class="hero-eyebrow">
+                    <span class="hero-eyebrow-line"></span>
+                    Algorithm Engineer // Mentalist
+                </p>
+                <h1 class="hero-title">Ariel<br>Noy</h1>
+                <p class="hero-tagline">Sleight of hand, feats of mind — built for rooms that expect more.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn--gold">Book Your Event</a>
+                    <a href="#experience" class="btn btn--ghost">Watch the Reel</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-visual__halo" aria-hidden="true"></div>
+                <div class="hero-visual__ring" aria-hidden="true"></div>
+                <div class="hero-visual__frame reg-corner">
+                    <img src="0.png" alt="Ariel Noy fanning a deck of cards, mid-performance" class="hero-visual__photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="experience-grid">
+                <div class="experience-content" data-reveal>
+                    <p class="eyebrow"><span class="mark">▲</span> The Experience</p>
+                    <h2 class="section-title">Sharp, Interactive,<br>Built Around the Room</h2>
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-laugh"></i></span>
+                            <span class="feature-label">Funny and full of genuine wonder</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-user-check"></i></span>
+                            <span class="feature-label">Content personalized to your event</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-users"></i></span>
+                            <span class="feature-label">Built on audience participation</span>
+                        </li>
+                        <li class="feature-item">
+                            <span class="feature-icon"><i class="fas fa-language"></i></span>
+                            <span class="feature-label">Performed in English &amp; Hebrew</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="experience-video" data-reveal>
+                    <div class="video-wrapper">
+                        <iframe
+                            src="https://www.youtube.com/embed/vUmVnduBFHs"
+                            title="Ariel Noy – Magic Performance Highlight"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SHOWS ===================== -->
+    <section class="shows-section" id="shows">
+        <div class="container">
+            <div class="section-head section-head--center" data-reveal>
+                <p class="eyebrow" style="justify-content:center"><span class="mark">▲</span> Show Types</p>
+                <h2 class="section-title">Three Formats, One Standard</h2>
+                <p class="section-subtitle">Professional entertainment tailored to your event, your venue, and your guest list.</p>
+            </div>
+
+            <div class="shows-carousel-viewport">
+                <div class="shows-grid" id="showsGrid" data-reveal>
+                    ... (all 3 show-card articles, unchanged) ...
+                </div>
+            </div>
+                <article class="show-card">
+                    <div class="show-card-accent"></div>
+                    <div class="show-card-icon"><i class="fas fa-hand-sparkles"></i></div>
+                    <h3 class="show-card-title">Close-Up Magic</h3>
+                    <p class="show-card-body">Intimate, interactive magic performed right before your eyes. Perfect for cocktail hours, table-to-table entertainment at dinners, or mingling events. Cards, coins, and everyday objects defy logic mere inches from your guests' faces — a personal approach that gives every guest their own unforgettable moment.</p>
+                </article>
+
+                <article class="show-card">
+                    <div class="show-card-accent"></div>
+                    <div class="show-card-icon"><i class="fas fa-building"></i></div>
+                    <h3 class="show-card-title">Corporate Events</h3>
+                    <p class="show-card-body">Sophisticated entertainment that breaks the ice and energizes the room. Ideal for conferences, product launches, company celebrations, and team-building events. Shows can be customized to include your company's messaging, values, or product themes — magic that's relevant to your specific business objectives.</p>
+                </article>
+
+                <article class="show-card">
+                    <div class="show-card-accent"></div>
+                    <div class="show-card-icon"><i class="fas fa-champagne-glasses"></i></div>
+                    <h3 class="show-card-title">Private Events</h3>
+                    <p class="show-card-body">From birthdays and anniversaries to Bar/Bat Mitzvahs and holiday parties, every show is tailored to the occasion. Adaptable to any venue size and guest count, with content matched to your specific audience — so the moment stays personal, not generic.</p>
+                </article>
+            </div>
+
+            <div class="carousel-dots" id="showsDots" aria-label="Show navigation">
+                <button class="carousel-dot active" aria-label="Show 1"></button>
+                <button class="carousel-dot"        aria-label="Show 2"></button>
+                <button class="carousel-dot"        aria-label="Show 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== GALLERY ===================== -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <p class="eyebrow"><span class="mark">▲</span> Gallery</p>
+                <h2 class="section-title">On Stage, Up Close</h2>
+            </div>
+            <div class="gallery-grid" data-reveal>
+                <figure class="gallery-item">
+                    <img src="22.png" alt="Ariel Noy holding up a single playing card" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="1.JPG" alt="Close-up card magic performed for a guest" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="6.JPG" alt="Corporate stage talk with a mentalism prediction board" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="9.JPG" alt="Rubik's cube mentalism routine" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="11.png" alt="A cascading spread of playing cards" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="2.JPG" alt="Stage mentalism performance with dramatic lighting" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="8.JPG" alt="Ariel Noy engaging with the audience" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+                <figure class="gallery-item">
+                    <img src="5.jpg" alt="A card trick captured mid-performance" loading="lazy">
+                    <figcaption class="gallery-overlay"><i class="fas fa-expand"></i></figcaption>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-head section-head--center" data-reveal>
+                <p class="eyebrow" style="justify-content:center"><span class="mark">▲</span> In Their Words</p>
+                <h2 class="section-title">What Clients Say</h2>
+            </div>
+
+            <div class="testimonials-carousel" data-reveal>
+                <button class="carousel-btn carousel-btn--prev" id="prevBtn" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="carousel-track-wrapper">
+                    <div class="testimonials-track" id="testimonialsSlider">
+
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-left testimonial-quote" aria-hidden="true"></i>
+                            <p>"Ariel performed at our company's annual conference and absolutely stole the show! His blend of humor and mind-blowing magic had our entire team engaged and talking about it for weeks. The way he incorporated our company values into his performance was brilliant. Professional, punctual, and phenomenal—we'll definitely book him again!"</p>
+                            <footer class="testimonial-author">
+                                <strong>Sarah Cohen</strong>
+                                <span>CEO, TechVision Ltd</span>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-left testimonial-quote" aria-hidden="true"></i>
+                            <p>"We hired Ariel for our wedding cocktail hour and it was hands down the best decision we made! Our guests are still raving about the close-up magic. He made everyone feel special, and the photos of people's shocked faces are priceless."</p>
+                            <footer class="testimonial-author">
+                                <strong>Michael &amp; Rachel Levi</strong>
+                                <span>Wedding Couple</span>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-left testimonial-quote" aria-hidden="true"></i>
+                            <p>"As an event planner, I've worked with many entertainers, but Ariel stands out. His professionalism is impeccable—from initial consultation to final performance. He read the room perfectly, adjusted his show on the fly, and had our guests absolutely mesmerized."</p>
+                            <footer class="testimonial-author">
+                                <strong>David Goldstein</strong>
+                                <span>Event Director, Prestige Events</span>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-left testimonial-quote" aria-hidden="true"></i>
+                            <p>"Ariel performed at my son's Bar Mitzvah and created memories we'll cherish forever. He engaged both the kids and adults with different styles of magic, making sure everyone felt included. The mentalism portion with the adults was particularly impressive—how did he know those things?!"</p>
+                            <footer class="testimonial-author">
+                                <strong>Miriam Shapiro</strong>
+                                <span>Private Event Host</span>
+                            </footer>
+                        </blockquote>
+
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-left testimonial-quote" aria-hidden="true"></i>
+                            <p>"We brought Ariel in for our international tech summit with attendees from 15 countries. His ability to perform seamlessly in both English and Hebrew, along with his tech-relevant humor, made him perfect for our crowd. Our feedback surveys mentioned him more than any speaker."</p>
+                            <footer class="testimonial-author">
+                                <strong>Dr. Yael Rosenberg</strong>
+                                <span>Conference Organizer, GlobalTech Summit</span>
+                            </footer>
+                        </blockquote>
+
+                    </div>
+                </div>
+
+                <button class="carousel-btn carousel-btn--next" id="nextBtn" aria-label="Next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="carousel-indicators" id="carouselIndicators"></div>
+        </div>
+    </section>
+
+    <!-- ===================== CLIENTS ===================== -->
+    <section class="clients-section" id="clients">
+        <div class="container">
+            <div class="section-head section-head--center" data-reveal>
+                <p class="eyebrow" style="justify-content:center"><span class="mark">▲</span> Trusted By</p>
+                <h2 class="section-title">On the Guest List At</h2>
+            </div>
+            <ul class="clients-grid" data-reveal>
+                <li class="client-item"><span>Google</span></li>
+                <li class="client-item"><span>Microsoft</span></li>
+                <li class="client-item"><span>Intel</span></li>
+                <li class="client-item"><span>Amazon</span></li>
+                <li class="client-item"><span>Facebook</span></li>
+                <li class="client-item"><span>Wix</span></li>
+                <li class="client-item"><span>Mobileye</span></li>
+                <li class="client-item"><span>Google</span></li>
+                <li class="client-item"><span>Microsoft</span></li>
+                <li class="client-item"><span>Intel</span></li>
+                <li class="client-item"><span>Amazon</span></li>
+                <li class="client-item"><span>Facebook</span></li>
+                <li class="client-item"><span>Wix</span></li>
+                <li class="client-item"><span>Mobileye</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <p class="eyebrow"><span class="mark">▲</span> Before You Book</p>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq-list" data-reveal>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        How far in advance should I book?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>For optimal availability, I recommend booking 3–6 months in advance, especially for peak seasons (June–August and November–December). However, I always do my best to accommodate last-minute requests. Feel free to reach out regardless of timing—I'll always try to make it work!</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        What types of events do you perform at?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>I perform at corporate functions, conferences, product launches, team-building events, weddings, birthdays, Bar and Bat Mitzvahs, anniversaries, holiday parties, fundraisers, and private celebrations. Each performance is tailored to match the specific tone and objectives of your event.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        How long is a typical performance?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>Performance lengths are fully flexible. Close-up magic sets typically run 1–3 hours. Stage shows range from 20-minute openers to 45–90 minute headline performances. During our consultation, we'll determine the perfect duration and format for your schedule.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Do you perform close-up magic, stage shows, or both?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>Both! Many clients choose a combination: close-up magic during cocktails/dinner, followed by a stage performance as the main event. I'll help you choose the perfect format based on your venue, audience size, and event flow.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        What do you need from the venue?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>For close-up magic I'm self-contained and need minimal space. For stage shows I typically need a performance area (at least 3×4 m), access to a sound system with wireless microphone, and basic lighting. I'll provide a detailed technical rider once we discuss your event.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Do you travel for events?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>Absolutely! I perform throughout Israel and am available for international bookings. I've performed across Europe, North America, and other regions. Travel fees may apply depending on the location, which we'll discuss during the booking process.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Can you customize the show for our event?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>Yes—customization is one of my specialties. For corporate events I can incorporate your company messaging and brand values. For private events I tailor content to the guest of honor's interests. Every show is a unique experience built around your vision.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        What languages do you perform in?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>I perform fluently in both English and Hebrew, and can seamlessly switch between languages or perform in both during the same show. I can also adapt my performance to be largely visual for mixed-language audiences.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        How do I book you for my event?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>Start by contacting me via the form below, email, phone, or WhatsApp. We'll have a consultation to discuss your event, then I'll send a customized proposal. Once agreed, a deposit secures your date and I'll coordinate closely with you throughout the planning process.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        What is your cancellation policy?
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </summary>
+                    <div class="faq-body">
+                        <div class="faq-answer">
+                            <p>Cancellations 90+ days before the event receive a full refund minus the deposit. Cancellations 60–90 days out receive a 50% refund. Within 60 days, the full payment is forfeited as I've typically turned down other bookings for that date. Rescheduling is usually easier to accommodate.</p>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-head" data-reveal>
+                <p class="eyebrow"><span class="mark">▲</span> The Magician</p>
+                <h2 class="section-title">About Ariel Noy</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image-wrap reg-corner" data-reveal>
+                    <img src="7.png" alt="Ariel Noy – Magician &amp; Mentalist" class="about-photo">
+                </div>
+
+                <div class="about-content" data-reveal>
+                    <div class="about-tabs" role="tablist">
+                        <button class="tab-btn active" data-tab="ariel" role="tab" aria-selected="true">About Ariel</button>
+                        <button class="tab-btn"        data-tab="show"  role="tab" aria-selected="false">About The Show</button>
+                    </div>
+
+                    <div class="tab-panel active" id="tab-ariel" role="tabpanel">
+                        <p>Ariel Noy graduated with honours with a bachelor's degree in electrical engineering from Bar Ilan University. He has been a magician and mentalist for over a decade, performing hundreds of shows and developing his own signature style.</p>
+                        <p>He created his magic using a combination of tools from the world of magic, psychology, and engineering. The effects are full of surprises, audience interaction, laughter, and amazement.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-show" role="tabpanel">
+                        <p>The show is based on techniques from magic, psychology, and engineering—designed so that it constantly involves the audience. It is sophisticated, entertaining, and highly interactive.</p>
+                        <p>The show is modular and designed according to the client's requirements. The length, effects, and even individual tricks can be customized for your event.</p>
+                    </div>
+
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <span class="stat-number num">1000+</span>
+                            <span class="stat-label">Performances</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number num">12+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number num">300+</span>
+                            <span class="stat-label">Corporate Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-head section-head--center" data-reveal>
+                <p class="eyebrow" style="justify-content:center"><span class="mark">▲</span> Let's Talk</p>
+                <h2 class="section-title">Let's Create Magic Together</h2>
+                <p class="section-subtitle">Ready to make your event unforgettable? Get in touch today.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info" data-reveal>
+                    <h3 class="contact-info-heading">Contact Information</h3>
+
+                    <div class="contact-item">
+                        <span class="contact-item-icon"><i class="fas fa-phone"></i></span>
+                        <div>
+                            <strong>Phone</strong>
+                            <a href="tel:+972527590190">+972-52-759-0190</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-item-icon"><i class="fas fa-envelope"></i></span>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:ariel@arielnoy.com">ariel@arielnoy.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <div>
+                            <strong>Location</strong>
+                            <span>Israel (available worldwide)</span>
+                        </div>
+                    </div>
+
+                    <a href="https://api.whatsapp.com/send?phone=972527590190" target="_blank" rel="noopener" class="btn btn--whatsapp btn--block">
+                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                    </a>
+
+                    <div class="contact-social">
+                        <p class="contact-social-label">Follow Me</p>
+                        <div class="social-row">
+                            <a href="https://www.facebook.com/ariel.noy.5"       target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/arielnoymagic/"    target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@arielnoymagic"       target="_blank" rel="noopener" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://www.youtube.com/@1arielnoy/featured" target="_blank" rel="noopener" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm" method="POST" action="https://formspree.io/f/xkoqwpee" novalidate data-reveal>
+                    <h3 class="contact-form-heading">Send a Message</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name <abbr title="required">*</abbr></label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventType">Event Type <abbr title="required">*</abbr></label>
+                            <select id="eventType" name="eventType" required>
+                                <option value="">Select event type</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="private">Private Party</option>
+                                <option value="bar-mitzvah">Bar/Bat Mitzvah</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email <abbr title="required">*</abbr></label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone <abbr title="required">*</abbr></label>
+                            <input type="tel" id="phone" name="phone" placeholder="+972-50-123-4567" required autocomplete="tel">
+                        </div>
+                    </div>
+
+                    <div class="form-group form-group--full">
+                        <label for="message">Tell me about your event <abbr title="required">*</abbr></label>
+                        <textarea id="message" name="message" rows="6" placeholder="Date, location, number of guests, and any special requests…" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn--gold btn--submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-brand">
+                <img src="logo-mark.png" alt="" class="footer-brand__mark">
+                <span class="footer-brand__word">
+                    <span class="footer-brand__name">Ariel Noy</span>
+                    <span class="footer-brand__tag">Magician &amp; Mentalist</span>
+                </span>
+            </div>
+            <p class="footer-tagline">Algorithm Engineering. precision, applied to wonder.</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/ariel.noy.5"       target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/arielnoymagic/"    target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@arielnoymagic"       target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@1arielnoy/featured" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://api.whatsapp.com/send?phone=972527590190" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Ariel Noy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="common.js"></script>
+</body>
+</html>
