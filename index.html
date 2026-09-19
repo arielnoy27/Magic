@@ -49,6 +49,9 @@
                 <li><a href="#faq"          class="nav-link">FAQ</a></li>
                 <li><a href="#about"        class="nav-link">About</a></li>
                 <li><a href="#contact"      class="nav-link">Contact</a></li>
+                <!-- Mobile-only: hidden on desktop by base.css
+                     (.nav-menu__lang-item), revealed inside the drawer
+                     by mobile.css. See NAVIGATION in mobile.css. -->
                 <li class="nav-menu__lang-item">
                     <a href="hebrew.html" class="nav-link nav-menu__lang-link">עברית</a>
                 </li>
@@ -147,31 +150,35 @@
                 <p class="section-subtitle">Professional entertainment tailored to your event, your venue, and your guest list.</p>
             </div>
 
+            <!-- NEW: wraps #showsGrid to clip the sliding flex track on
+                 mobile (overflow: hidden, added in mobile.css only).
+                 Fixes the horizontal-overflow bug — see the SHOWS
+                 section comment in mobile.css for the full explanation.
+                 No JS changes needed: mobile.js still selects
+                 '.shows-grid' directly. -->
             <div class="shows-carousel-viewport">
                 <div class="shows-grid" id="showsGrid" data-reveal>
-                    ... (all 3 show-card articles, unchanged) ...
+                    <article class="show-card">
+                        <div class="show-card-accent"></div>
+                        <div class="show-card-icon"><i class="fas fa-hand-sparkles"></i></div>
+                        <h3 class="show-card-title">Close-Up Magic</h3>
+                        <p class="show-card-body">Intimate, interactive magic performed right before your eyes. Perfect for cocktail hours, table-to-table entertainment at dinners, or mingling events. Cards, coins, and everyday objects defy logic mere inches from your guests' faces — a personal approach that gives every guest their own unforgettable moment.</p>
+                    </article>
+
+                    <article class="show-card">
+                        <div class="show-card-accent"></div>
+                        <div class="show-card-icon"><i class="fas fa-building"></i></div>
+                        <h3 class="show-card-title">Corporate Events</h3>
+                        <p class="show-card-body">Sophisticated entertainment that breaks the ice and energizes the room. Ideal for conferences, product launches, company celebrations, and team-building events. Shows can be customized to include your company's messaging, values, or product themes — magic that's relevant to your specific business objectives.</p>
+                    </article>
+
+                    <article class="show-card">
+                        <div class="show-card-accent"></div>
+                        <div class="show-card-icon"><i class="fas fa-champagne-glasses"></i></div>
+                        <h3 class="show-card-title">Private Events</h3>
+                        <p class="show-card-body">From birthdays and anniversaries to Bar/Bat Mitzvahs and holiday parties, every show is tailored to the occasion. Adaptable to any venue size and guest count, with content matched to your specific audience — so the moment stays personal, not generic.</p>
+                    </article>
                 </div>
-            </div>
-                <article class="show-card">
-                    <div class="show-card-accent"></div>
-                    <div class="show-card-icon"><i class="fas fa-hand-sparkles"></i></div>
-                    <h3 class="show-card-title">Close-Up Magic</h3>
-                    <p class="show-card-body">Intimate, interactive magic performed right before your eyes. Perfect for cocktail hours, table-to-table entertainment at dinners, or mingling events. Cards, coins, and everyday objects defy logic mere inches from your guests' faces — a personal approach that gives every guest their own unforgettable moment.</p>
-                </article>
-
-                <article class="show-card">
-                    <div class="show-card-accent"></div>
-                    <div class="show-card-icon"><i class="fas fa-building"></i></div>
-                    <h3 class="show-card-title">Corporate Events</h3>
-                    <p class="show-card-body">Sophisticated entertainment that breaks the ice and energizes the room. Ideal for conferences, product launches, company celebrations, and team-building events. Shows can be customized to include your company's messaging, values, or product themes — magic that's relevant to your specific business objectives.</p>
-                </article>
-
-                <article class="show-card">
-                    <div class="show-card-accent"></div>
-                    <div class="show-card-icon"><i class="fas fa-champagne-glasses"></i></div>
-                    <h3 class="show-card-title">Private Events</h3>
-                    <p class="show-card-body">From birthdays and anniversaries to Bar/Bat Mitzvahs and holiday parties, every show is tailored to the occasion. Adaptable to any venue size and guest count, with content matched to your specific audience — so the moment stays personal, not generic.</p>
-                </article>
             </div>
 
             <div class="carousel-dots" id="showsDots" aria-label="Show navigation">
