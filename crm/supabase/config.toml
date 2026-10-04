@@ -1,0 +1,8 @@
+project_id = "ariel-noy-crm"
+[functions.formspree-lead]
+# Provider signature is validated in the handler; provider has no Supabase JWT.
+verify_jwt = false
+
+[functions.submit-lead]
+# Public visitors use server-verified Turnstile, not account JWTs.
+verify_jwt = false

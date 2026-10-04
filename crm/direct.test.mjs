@@ -1,0 +1,12 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {makeDirectHandler} from './supabase/functions/submit-lead/handler.mjs';
+const env={SUPABASE_URL:'https://example.test',SUPABASE_SERVICE_ROLE_KEY:'test-only',TURNSTILE_SECRET_KEY:'test-only'};
+const data={fullName:'Test',email:'test@example.com',phone:'0501234567',eventType:'private',message:'Inquiry',submissionId:'d7e95bd2-02cd-4a75-84cf-0b90b07e54e2',turnstileToken:'test'};
+function request(value=data,origin='https://arielnoy27.github.io'){return new Request('https://example.test',{method:'POST',headers:{origin,'Content-Type':'application/json'},body:JSON.stringify(value)});}
+test('foreign origin rejected before any external call',async()=>{const h=makeDirectHandler(env,()=>{throw Error('must not call');});assert.equal((await h(request(data,'https://evil.test'))).status,403);});
+test('preflight works only for allowed origin',async()=>{const h=makeDirectHandler(env);const r=await h(new Request('https://example.test',{method:'OPTIONS',headers:{origin:'https://arielnoy27.github.io'}}));assert.equal(r.status,204);});
+test('missing verification token or UUID rejected',async()=>{const h=makeDirectHandler(env);for(const key of ['submissionId','turnstileToken']){const d={...data};delete d[key];assert.equal((await h(request(d))).status,422);}});
+test('bad challenge, wrong hostname or action cannot reach storage',async()=>{for(const result of [{success:false},{success:true,hostname:'evil.test',action:'lead'},{success:true,hostname:'arielnoy27.github.io',action:'login'}]){let calls=0;const h=makeDirectHandler(env,async()=>{calls++;return Response.json(result);});assert.equal((await h(request())).status,403);assert.equal(calls,1);}});
+test('only verified submissions saved, conflict ignores duplicate updates',async()=>{let calls=0;const h=makeDirectHandler(env,async(url,options)=>{calls++;if(calls===1)return Response.json({success:true,hostname:'arielnoy27.github.io',action:'lead'});assert.match(url,/on_conflict=source_key/);assert.match(options.headers.Prefer,/ignore-duplicates/);assert.equal(JSON.parse(options.body).source_key,`direct:${data.submissionId}`);return new Response(null,{status:201});});assert.equal((await h(request())).status,200);assert.equal(calls,2);});
+test('database outage never produces success',async()=>{let calls=0;const h=makeDirectHandler(env,async()=>++calls===1?Response.json({success:true,hostname:'arielnoy27.github.io',action:'lead'}):new Response(null,{status:503}));assert.equal((await h(request())).status,503);});

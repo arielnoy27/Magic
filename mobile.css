@@ -1,0 +1,370 @@
+/* ============================================================
+   ARIEL NOY — Magician & Mentalist
+   mobile.css | MOBILE-ONLY — a purpose-built phone composition,
+   not the desktop layout compressed.
+   Loaded only when the viewport is 1100px or narrower
+   (see the device-script boundary in the HTML <head>).
+
+   ------------------------------------------------------------
+   ORGANIZATION
+   ------------------------------------------------------------
+   Rules are grouped by SECTION (Nav, Hero, Experience, Shows,
+   Gallery, Testimonials, Clients, FAQ, About, Contact, Footer),
+   not by pixel tier. Search "MOBILE — <SECTION NAME>" to find
+   every rule touching that section.
+
+   Three sections here get a genuinely different STRUCTURE on
+   mobile, not just resized desktop geometry — each is called out
+   in its own block below:
+     • Navigation — the language switcher moves out of the top
+       bar and into the drawer; the top bar itself only ever
+       shows brand + WhatsApp + hamburger.
+     • Gallery — the desktop mosaic (sized for 6 columns) becomes
+       a horizontally swipeable filmstrip of uniform portrait
+       cards, not a shrunk 2-column version of the same mosaic.
+     • About stats — the row that wraps unevenly on desktop-sized
+       logic becomes a fixed 3-column grid so it never orphans a
+       lone stat on its own row.
+   Everywhere else, the section already stacks naturally in
+   good order (text above/below image per section, as appropriate)
+   and mobile.css only tunes spacing, type scale and touch
+   targets for that composition — no reflow trick is needed.
+
+   Two small, explained exceptions touch shared files:
+     • base.css gains one hidden-by-default nav item (an item this
+       file, and only this file, reveals) — see NAVIGATION below.
+     • index.html gains that one nav item's markup.
+   Neither changes anything about how the site looks or behaves
+   above 1100px.
+
+   Breakpoint tiers in use: ≤1100px (tablet/phone-landscape),
+   ≤768px (phone), ≤480px (small phone) — plus one ≤560px cutoff
+   in Hero for full-width buttons, chosen because that's where
+   two pill buttons stop fitting on one comfortable line, not an
+   arbitrary phone-model target.
+   ============================================================ */
+
+
+/* =========================================
+   MOBILE — GLOBAL
+   ========================================= */
+@media (max-width: 1100px) {
+    section { padding-block: clamp(56px, 11vw, 88px); }
+}
+
+@media (max-width: 768px) {
+    .container { padding-inline: clamp(18px, 5vw, 24px); }
+    .section-subtitle { margin-block-end: clamp(32px, 8vw, 44px); }
+}
+
+
+/* =========================================
+   MOBILE — NAVIGATION
+   =========================================
+   STRUCTURAL CHANGE: on desktop the top bar holds brand + full
+   link row + language toggle + WhatsApp icon. Squeezed onto a
+   phone, that's five separate elements fighting for ~300px next
+   to a hamburger — a classic "shrunk desktop" symptom, not a
+   redesign. On mobile the top bar is simplified to exactly three
+   things — brand, WhatsApp (the one action worth surfacing
+   immediately), and the hamburger — and the language switcher
+   moves into the drawer as a plain list item, where it has room
+   to be a full-width, clearly-labeled row instead of a cramped
+   "HE" badge.
+
+   This needs one small HTML addition: a language <li> inside
+   #navMenu (hidden on desktop by a single rule added to
+   base.css, right next to the other nav rules, and switched on
+   only here). See the two snippets below the main file. */
+@media (max-width: 1100px) {
+    .hamburger { display: flex; }
+
+    /* With the language link moved into the drawer and the full
+       nav-menu taken out of flow (position: fixed, below), only
+       three items remain in the top bar: brand, nav-actions
+       (WhatsApp), and the hamburger. base.css's justify-content:
+       space-between then spreads all THREE evenly across the row
+       — landing the WhatsApp icon dead-center instead of beside
+       the hamburger. This groups brand on the left and
+       actions+hamburger together on the right instead. */
+    .nav-container { justify-content: flex-start; }
+    .nav-actions { margin-inline-start: auto; }
+
+    .nav-menu {
+        position: fixed;
+        inset-block-start: var(--nav-height);
+        inset-inline: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        background: var(--stage);
+        border-block-end: 1px solid var(--line);
+        padding: 20px 24px 28px;
+        transform: translateY(-8px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s var(--ease), transform 0.25s var(--ease), visibility 0.25s;
+        max-height: calc(100vh - var(--nav-height));
+        overflow-y: auto;
+    }
+    .nav-menu.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav-link { width: 100%; padding-block: 13px; }
+
+    /* the language toggle leaves the top bar entirely on mobile */
+    .nav-actions .btn-lang { display: none; }
+
+    /* ...and reappears here, at the foot of the drawer */
+    .nav-menu__lang-item {
+        display: block;
+        width: 100%;
+        margin-block-start: 8px;
+        padding-block-start: 16px;
+        border-block-start: 1px solid var(--line);
+    }
+    .nav-menu__lang-link { color: var(--gold-soft); }
+}
+
+@media (max-width: 480px) {
+    .nav-brand__tag { display: none; }
+}
+
+
+/* =========================================
+   MOBILE — HERO
+   =========================================
+   Composition: visual first, then name and tagline, then a
+   single stacked column of full-width actions — the order and
+   shape a phone hero actually needs, not the desktop's two-up
+   grid squeezed to one column. */
+@media (max-width: 1100px) {
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-eyebrow { justify-content: center; }
+    .hero-actions { justify-content: center; }
+    .hero-tagline { margin-inline: auto; }
+    .hero-visual { order: -1; margin-block-end: clamp(16px, 5vw, 24px); }
+    .hero-visual__frame { width: min(78vw, 320px); }
+    .hero-visual .spec-tag { font-size: 0.6rem; }
+}
+
+@media (max-width: 560px) {
+    /* two pill buttons stop sitting comfortably side by side
+       below this width — full-width, stacked, thumb-sized
+       targets read as "designed for touch," not "desktop CTAs
+       that happened to wrap." */
+    .hero-actions { flex-direction: column; align-items: stretch; gap: 12px; }
+    .hero-actions .btn { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .hero { padding-block-start: clamp(24px, 8vw, 40px); }
+    .hero-title { font-size: clamp(2.5rem, 15vw, 3.2rem); }
+}
+
+
+/* =========================================
+   MOBILE — EXPERIENCE
+   =========================================
+   Already the right composition in document order — text and
+   feature list, then the video — so nothing here reorders
+   anything; this only gives the stack its own mobile rhythm. */
+@media (max-width: 1100px) {
+    .experience-grid { grid-template-columns: 1fr; gap: clamp(32px, 8vw, 44px); }
+}
+
+@media (max-width: 768px) {
+    .feature-list { gap: 16px; }
+    .feature-label { font-size: 0.95rem; }
+}
+
+
+/* =========================================
+   MOBILE — SHOWS
+   =========================================
+   STRUCTURAL CHANGE (kept from the previous pass): the desktop's
+   three-across card row becomes one card at a time, swiped
+   between with dots — a horizontally-scrollable structure, per
+   the brief, rather than three cards stacked in a long column
+   or shrunk to fit three-abreast.
+
+   OVERFLOW FIX: sliding between cards works by giving each card
+   flex-shrink: 0 so mobile.js can translateX() by exact 100%
+   steps — but that also means all 3 cards sit side by side at
+   full width with nothing forcing them to wrap, so the slider's
+   real layout width is ~300% of the viewport. Testimonials does
+   the same trick safely because its track sits inside
+   .carousel-track-wrapper { overflow: hidden }; Shows never had
+   that wrapper, so the extra 200% bled out to the right of the
+   viewport — invisible at rest, but real, swipeable overflow.
+   .shows-carousel-viewport (new markup, wrapping #showsGrid) is
+   that missing clip boundary, scoped to this same ≤768px range
+   so it can never clip the desktop-only hover lift/shadow on
+   .show-card (that only exists in desktop.css, ≥1101px). */
+@media (max-width: 768px) {
+    .shows-carousel-viewport { overflow: hidden; }
+    .shows-grid { display: flex; }
+    .shows-grid .show-card { flex: 0 0 100%; width: 100%; }
+    .carousel-dots { display: flex; }
+
+    .show-card { padding: clamp(28px, 7vw, 36px) clamp(20px, 6vw, 26px); }
+    .show-card-title { font-size: clamp(1.15rem, 4.5vw, 1.3rem); }
+    .show-card-body { font-size: 0.92rem; line-height: 1.7; }
+}
+
+
+/* =========================================
+   MOBILE — GALLERY
+   =========================================
+   STRUCTURAL CHANGE: the desktop mosaic's large/small tile spans
+   (nth-child(1) and nth-child(6) span 2×3) are sized for a
+   6-column canvas. Forcing the same spans into 2 or 4 mobile
+   columns is exactly the "shrink and hope" pattern the brief
+   calls out — the big tiles end up disproportionate and the grid
+   still needs a fixed row-height guess. Mobile drops the grid
+   entirely and uses a horizontally swipeable filmstrip of
+   uniform portrait cards instead: every photo gets equal, full
+   attention one at a time, which suits a phone screen (and a
+   single thumb) far better than a small mosaic ever could. */
+@media (max-width: 1100px) {
+    .gallery-grid {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 4px;
+        gap: 12px;
+        padding-block: 4px;
+    }
+    .gallery-item {
+        flex: 0 0 auto;
+        width: min(72vw, 300px);
+        aspect-ratio: 4 / 5;
+        scroll-snap-align: start;
+    }
+}
+
+
+/* =========================================
+   MOBILE — TESTIMONIALS
+   =========================================
+   Already switches to one card per view via cardsPerView() in
+   common.js at ≤768px; this tunes type and touch targets for
+   that single-column card rather than changing its structure
+   further. */
+@media (max-width: 768px) {
+    .testimonial-card { flex: 0 0 100%; padding: 6px 4px; }
+    .testimonial-card p { font-size: 0.95rem; line-height: 1.75; }
+    .carousel-btn { width: 44px; height: 44px; font-size: 0.9rem; }
+}
+
+
+/* =========================================
+   MOBILE — CLIENTS
+   =========================================
+   STRUCTURAL CHANGE: the desktop bordered grid of 14 logos
+   becomes a tall wall of names once it's one or two per row —
+   not a real mobile pattern. It becomes a single horizontally
+   swipeable strip instead, which is how a "trusted by" row is
+   commonly and comfortably browsed on a phone. No HTML change
+   needed — the existing list markup works as a scroll row. */
+@media (max-width: 1100px) {
+    .clients-grid {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        border-block-start: none;
+        border-block-end: 1px solid var(--line);
+        gap: 0;
+    }
+    .client-item {
+        flex: 0 0 auto;
+        min-width: 140px;
+        padding-inline: 22px;
+        border-block-end: none;
+        scroll-snap-align: start;
+    }
+}
+
+
+/* =========================================
+   MOBILE — FAQ
+   =========================================
+   An accordion is already the right shape for a phone in a
+   single column; base.css had no mobile-specific type scale for
+   it at all, so this gives it one, plus a comfortable tap
+   target on each question row. */
+@media (max-width: 768px) {
+    .faq-question {
+        gap: 14px;
+        padding-block: 20px;
+        min-height: 48px;
+        font-size: clamp(0.95rem, 4vw, 1.05rem);
+    }
+    .faq-answer { padding-block-end: 20px; }
+    .faq-answer p { font-size: 0.92rem; line-height: 1.7; }
+}
+
+
+/* =========================================
+   MOBILE — ABOUT
+   =========================================
+   STRUCTURAL CHANGE (stats row): desktop's flexible row wraps
+   unpredictably once it's narrower than three stats — often
+   leaving one stat orphaned alone on its own line. On mobile it
+   becomes a deliberate 3-column grid instead, so the three
+   numbers always sit evenly, centered, side by side. Everything
+   else here (image, then tabs/text) was already stacking in the
+   right order, so it only gets a shape suited to a narrow
+   column: a portrait aspect-ratio frame instead of a desktop-
+   derived fixed height. */
+@media (max-width: 1100px) {
+    .about-grid { grid-template-columns: 1fr; gap: clamp(28px, 7vw, 36px); }
+    .about-image-wrap { min-height: 0; aspect-ratio: 4 / 5; }
+    .about-photo { width: 80%; }
+}
+
+@media (max-width: 768px) {
+    .stats-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 12px;
+        text-align: center;
+    }
+    .stat-box { align-items: center; }
+}
+
+@media (max-width: 480px) {
+    .about-image-wrap { aspect-ratio: 3 / 4; }
+    .about-photo { width: 86%; }
+    .stat-number { font-size: clamp(1.5rem, 7vw, 1.9rem); }
+    .stat-label { font-size: 0.72rem; }
+}
+
+
+/* =========================================
+   MOBILE — CONTACT
+   =========================================
+   Already stacks info above form in the right order (quick
+   contact details and the WhatsApp CTA before the longer form);
+   this only tunes spacing for the single column. */
+@media (max-width: 1100px) {
+    .contact-grid { grid-template-columns: 1fr; gap: clamp(32px, 8vw, 44px); }
+}
+
+@media (max-width: 768px) {
+    .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .contact-form { padding: clamp(22px, 6vw, 26px) clamp(18px, 5vw, 20px); }
+}
+
+
+/* =========================================
+   MOBILE — FOOTER
+   =========================================
+   No overrides needed — base.css's footer is already a single,
+   centered column at every width. Left as an explicit empty
+   block so the file's section list stays complete and scannable.
+   ========================================= */
