@@ -937,3 +937,24 @@ section { position: relative; padding-block: 100px; }
         transform: none;
     }
 }
+
+
+/* Date field: light calendar control and brand-gold interaction */
+#eventDate {
+    color-scheme: dark;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#eventDate::-webkit-calendar-picker-indicator {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+    cursor: pointer;
+    padding: 6px;
+}
+
+#eventDate:focus,
+#eventDate:active {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px var(--gold-glow),
+                0 0 16px var(--gold-glow);
+}
