@@ -678,6 +678,7 @@ function initContactForm() {
     `);
 
     form.noValidate = true;
+    form.querySelector('[type="submit"]').disabled = false;
     const he = document.documentElement.lang.startsWith('he');
     const text = he ? {
         invalid: 'נא למלא את השדות המסומנים בצורה תקינה.',
@@ -757,7 +758,7 @@ function initContactForm() {
             }
             // Only explicit JSON success counts as acceptance, not an HTML challenge page.
             const result = await response.json();
-            if (result.errors || result.ok === false) {
+            if ((direct && result.ok !== true) || result.errors || result.ok === false) {
                 status.textContent = text.uncertain;
                 return;
             }

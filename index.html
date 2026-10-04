@@ -558,7 +558,7 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contactForm" method="POST" action="https://formspree.io/f/xkoqwpee" data-reveal>
+                <form class="contact-form" id="contactForm" method="POST" action="https://diwkgshzirfttqemhwjc.supabase.co/functions/v1/submit-lead" data-intake="supabase" data-reveal>
                         <input type="hidden" name="language" value="en">
                         <input type="hidden" name="submissionId" value="">
                     <h3 class="contact-form-heading">Send a Message</h3>
@@ -566,7 +566,7 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="fullName">Full Name <abbr title="required">*</abbr></label>
-                            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required autocomplete="name">
+                            <input type="text" id="fullName" name="fullName" maxlength="250" placeholder="Your full name" required autocomplete="name">
                         </div>
                         <div class="form-group">
                             <label for="eventType">Event Type <abbr title="required">*</abbr></label>
@@ -585,20 +585,24 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="email">Email <abbr title="required">*</abbr></label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+                            <input type="email" id="email" name="email" maxlength="320" placeholder="your@email.com" required autocomplete="email">
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone <abbr title="required">*</abbr></label>
-                            <input type="tel" id="phone" name="phone" placeholder="+972-50-123-4567" required autocomplete="tel">
+                            <input type="tel" id="phone" name="phone" maxlength="80" placeholder="+972-50-123-4567" required autocomplete="tel">
                         </div>
                     </div>
 
-                    <div class="form-group form-group--full">
+                    <div class="form-row"><div class="form-group"><label for="eventDate">Event Date (optional)</label><input type="date" id="eventDate" name="eventDate"></div><div class="form-group"><label for="eventLocation">City / Venue (optional)</label><input type="text" id="eventLocation" name="eventLocation" maxlength="250"></div></div>
+<div class="form-group"><label for="guestCount">Guests (optional)</label><input type="number" id="guestCount" name="guestCount" min="1" max="100000" step="1"></div>
+<div class="form-group form-group--full">
                         <label for="message">Tell me about your event <abbr title="required">*</abbr></label>
-                        <textarea id="message" name="message" rows="6" placeholder="Date, location, number of guests, and any special requests…" required></textarea>
+                        <textarea id="message" name="message" maxlength="5000" rows="6" placeholder="Date, location, number of guests, and any special requests…" required></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn--gold btn--submit">
+                    <div class="cf-turnstile" data-sitekey="0x4AAAAAAFNABQQiM51BgqJB" data-action="lead" data-size="flexible" data-language="en" style="margin-block:16px;max-width:100%;"></div>
+<noscript><p>JavaScript is required. Please use the phone, email or WhatsApp links to contact me.</p></noscript>
+<button type="submit" class="btn btn--gold btn--submit" disabled>
                         <i class="fas fa-paper-plane"></i> Send Message
                     </button>
                 </form>
@@ -628,6 +632,7 @@
         </div>
     </footer>
 
-    <script src="common.js"></script>
+    <script src="common.js?v=crm-20261004"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </body>
 </html>
