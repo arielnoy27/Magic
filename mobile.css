@@ -200,14 +200,15 @@
    so it can never clip the desktop-only hover lift/shadow on
    .show-card (that only exists in desktop.css, ≥1101px). */
 @media (max-width: 768px) {
-    .shows-carousel { display: flex; align-items: center; gap: 12px; }
-    .shows-carousel-viewport { flex: 1; min-width: 0; overflow: hidden; }
+    .shows-carousel { display: block; }
+    .shows-carousel-viewport { min-width: 0; overflow: hidden; }
+    .shows-carousel-nav { display: flex; align-items: center; justify-content: center; gap: 18px; margin-block-start: 20px; }
     .shows-carousel .carousel-btn { display: flex; width: 42px; height: 42px; font-size: 0.85rem; }
-    .shows-grid { display: flex; }
-    .shows-grid .show-card { flex: 0 0 100%; width: 100%; }
+    .shows-carousel .carousel-dots { display: flex; margin: 0; }
+    .shows-grid { display: flex; align-items: stretch; }
+    .shows-grid .show-card { flex: 0 0 100%; width: 100%; height: auto; }
     html[dir="rtl"] .shows-grid { direction: ltr; }
     html[dir="rtl"] .shows-grid .show-card { direction: rtl; text-align: right; }
-    .carousel-dots { display: flex; }
 
     .show-card { padding: clamp(28px, 7vw, 36px) clamp(20px, 6vw, 26px); }
     .show-card-title { font-size: clamp(1.15rem, 4.5vw, 1.3rem); }

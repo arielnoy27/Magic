@@ -147,9 +147,6 @@
             </div>
 
             <div class="shows-carousel">
-            <button class="carousel-btn carousel-btn--prev" id="showsPrev" aria-label="המופע הקודם">
-                <i class="fas fa-chevron-right"></i>
-            </button>
             <div class="shows-carousel-viewport">
                 <div class="shows-grid" id="showsGrid" data-reveal>
                 <article class="show-card">
@@ -174,15 +171,19 @@
                 </article>
                 </div>
             </div>
-            <button class="carousel-btn carousel-btn--next" id="showsNext" aria-label="המופע הבא">
-                <i class="fas fa-chevron-left"></i>
-            </button>
+            <div class="shows-carousel-nav">
+                <button class="carousel-btn carousel-btn--prev" id="showsPrev" aria-label="המופע הקודם">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="carousel-dots" id="showsDots" aria-label="ניווט מופעים">
+                    <button class="carousel-dot active" aria-label="מופע 1"></button>
+                    <button class="carousel-dot"        aria-label="מופע 2"></button>
+                    <button class="carousel-dot"        aria-label="מופע 3"></button>
+                </div>
+                <button class="carousel-btn carousel-btn--next" id="showsNext" aria-label="המופע הבא">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
             </div>
-
-            <div class="carousel-dots" id="showsDots" aria-label="ניווט מופעים">
-                <button class="carousel-dot active" aria-label="מופע 1"></button>
-                <button class="carousel-dot"        aria-label="מופע 2"></button>
-                <button class="carousel-dot"        aria-label="מופע 3"></button>
             </div>
         </div>
     </section>
