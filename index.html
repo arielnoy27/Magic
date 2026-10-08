@@ -125,13 +125,11 @@
 
                 <div class="experience-video" data-reveal>
                     <div class="video-wrapper">
-                        <iframe
-                            src="https://www.youtube.com/embed/vUmVnduBFHs"
-                            title="Ariel Noy – Magic Performance Highlight"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen loading="lazy">
-                        </iframe>
+                        <button class="video-launch" type="button" data-video-id="vUmVnduBFHs" data-video-title="Ariel Noy – Magic Performance Highlight">
+                            <img src="https://i.ytimg.com/vi/vUmVnduBFHs/hqdefault.jpg" alt="Ariel Noy performing magic" loading="lazy">
+                            <span class="video-launch__play" aria-hidden="true"><i class="fas fa-play"></i></span>
+                            <span class="video-launch__label">Watch performance highlight</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -149,8 +147,6 @@
 
             <div class="shows-carousel-viewport">
                 <div class="shows-grid" id="showsGrid" data-reveal>
-                </div>
-            </div>
                 <article class="show-card">
                     <div class="show-card-accent"></div>
                     <div class="show-card-icon"><i class="fas fa-hand-sparkles"></i></div>
@@ -171,6 +167,7 @@
                     <h3 class="show-card-title">Private Events</h3>
                     <p class="show-card-body">From birthdays and anniversaries to Bar/Bat Mitzvahs and holiday parties, every show is tailored to the occasion. Adaptable to any venue size and guest count, with content matched to your specific audience — so the moment stays personal, not generic.</p>
                 </article>
+                </div>
             </div>
 
             <div class="carousel-dots" id="showsDots" aria-label="Show navigation">
@@ -287,6 +284,16 @@
                             </footer>
                         </blockquote>
 
+                        <!-- Placeholder testimonial — replace with verified client feedback before publishing. -->
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-left testimonial-quote" aria-hidden="true"></i>
+                            <p>"[Placeholder testimonial] From planning through the final moment of the event, the experience felt effortless and personal. The performance brought our guests together and gave the evening an energy everyone enjoyed."</p>
+                            <footer class="testimonial-author">
+                                <strong>Placeholder Client</strong>
+                                <span>Event Host — replace before publishing</span>
+                            </footer>
+                        </blockquote>
+
                     </div>
                 </div>
 
@@ -306,22 +313,26 @@
                 <p class="eyebrow" style="justify-content:center"><span class="mark">▲</span> Trusted By</p>
                 <h2 class="section-title">On the Guest List At</h2>
             </div>
-            <ul class="clients-grid" data-reveal>
-                <li class="client-item"><span>Google</span></li>
-                <li class="client-item"><span>Microsoft</span></li>
-                <li class="client-item"><span>Intel</span></li>
-                <li class="client-item"><span>Amazon</span></li>
-                <li class="client-item"><span>Facebook</span></li>
-                <li class="client-item"><span>Wix</span></li>
-                <li class="client-item"><span>Mobileye</span></li>
-                <li class="client-item"><span>Google</span></li>
-                <li class="client-item"><span>Microsoft</span></li>
-                <li class="client-item"><span>Intel</span></li>
-                <li class="client-item"><span>Amazon</span></li>
-                <li class="client-item"><span>Facebook</span></li>
-                <li class="client-item"><span>Wix</span></li>
-                <li class="client-item"><span>Mobileye</span></li>
-            </ul>
+            <div class="clients-marquee" role="region" aria-label="Organizations Ariel has performed for">
+                <div class="clients-track">
+                    <ul class="clients-group">
+                        <li class="client-item"><img class="client-logo client-logo--efrata" src="logos/removeBG/efrata.png" alt="Efrata" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--hevron" src="logos/removeBG/hevron.png" alt="Hevron Yeshiva" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--idf" src="logos/removeBG/idf.png" alt="Israel Defense Forces" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--malam" src="logos/removeBG/malam-team.png" alt="MalamTeam" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--queens" src="logos/removeBG/queenHebrew2.png" alt="Queens Hebrew Academy" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--yiot" src="logos/removeBG/yiot.png" alt="Young Israel of Tenafly" loading="lazy"></li>
+                    </ul>
+                    <ul class="clients-group" aria-hidden="true">
+                        <li class="client-item"><img class="client-logo client-logo--efrata" src="logos/removeBG/efrata.png" alt="" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--hevron" src="logos/removeBG/hevron.png" alt="" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--idf" src="logos/removeBG/idf.png" alt="" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--malam" src="logos/removeBG/malam-team.png" alt="" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--queens" src="logos/removeBG/queenHebrew2.png" alt="" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--yiot" src="logos/removeBG/yiot.png" alt="" loading="lazy"></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 

@@ -40,6 +40,8 @@
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
     border-color: var(--gold-deep);
 }
+.video-launch:hover > img { transform: scale(1.05); filter: saturate(0.9) brightness(0.82); }
+.video-launch:hover .video-launch__play { transform: scale(1.10); box-shadow: 0 12px 32px rgba(0,0,0,0.42), 0 0 0 10px rgba(192,138,62,0.16); }
 
 /* ---- 8. Shows — card lift + cursor spotlight (tilt itself is
    applied inline by initCardInteractions() in this file's
@@ -60,7 +62,7 @@
 .carousel-btn:hover, .carousel-btn:focus-visible { border-color: var(--gold); color: var(--gold); }
 
 /* ---- 11. Clients ---- */
-.client-item:hover span { color: var(--gold); }
+.client-item:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 16px 32px rgba(0, 0, 0, 0.24), 0 0 0 1px rgba(192, 138, 62, 0.10); }
 
 /* ---- 13. About ---- */
 .about-image-wrap:hover .about-photo { transform: scale(1.03) translateY(-4px); }

@@ -492,7 +492,19 @@ section { position: relative; padding-block: 100px; }
     pointer-events: none;
     z-index: 1;
 }
-.video-wrapper iframe { position: absolute; inset: 0; width: 100%; height: 100%; }
+.video-launch { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; width: 100%; height: 100%; padding: 0; overflow: hidden; color: var(--ink); background: var(--stage); }
+.video-launch > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(0.76) brightness(0.70); transition: transform 0.5s var(--ease), filter 0.5s var(--ease); }
+.video-launch::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,14,20,0.04), rgba(10,14,20,0.50)); }
+.video-launch__play { position: relative; z-index: 1; display: grid; place-items: center; width: 68px; height: 68px; font-size: 1.45rem; padding-inline-start: 3px; color: var(--stage); background: var(--grad-gold); border-radius: 50%; box-shadow: 0 10px 28px rgba(0,0,0,0.36), 0 0 0 8px rgba(192,138,62,0.12); transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.video-launch__label { position: absolute; z-index: 1; inset-block-end: 22px; inset-inline: 18px; color: #fff; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+.video-launch:focus-visible { outline: 2px solid var(--gold-soft); outline-offset: -5px; }
+.video-modal { position: fixed; inset: 0; z-index: 11000; display: grid; place-items: center; padding: clamp(20px, 5vw, 64px); background: rgba(4, 8, 13, 0.82); backdrop-filter: blur(10px); animation: videoModalFadeIn 0.25s var(--ease) both; }
+.video-modal__dialog { position: relative; width: min(960px, 100%); aspect-ratio: 16 / 9; overflow: hidden; background: #000; border: 1px solid rgba(227,184,122,0.42); box-shadow: 0 28px 90px rgba(0,0,0,0.60); animation: videoModalRise 0.35s var(--ease) both; }
+.video-modal__frame { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-modal__close { position: absolute; z-index: 1; inset-block-start: 12px; inset-inline-end: 12px; display: grid; place-items: center; width: 40px; height: 40px; color: var(--ink); background: rgba(10,14,20,0.82); border: 1px solid rgba(236,239,243,0.35); border-radius: 50%; transition: background 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease); }
+.video-modal__close:hover, .video-modal__close:focus-visible { color: var(--stage); background: var(--gold-soft); transform: scale(1.06); }
+@keyframes videoModalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes videoModalRise { from { opacity: 0; transform: translateY(14px) scale(0.97); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
 /* ============================================================
    8. SHOWS
@@ -584,6 +596,11 @@ section { position: relative; padding-block: 100px; }
     flex: 0 0 calc(100% / 3);
     padding: 6px 22px;
 }
+/* The track must retain LTR flex mechanics so the shared translateX()
+   carousel logic advances correctly on the Hebrew (RTL) page. Cards
+   immediately restore RTL text flow below. */
+html[dir="rtl"] .testimonials-track { direction: ltr; }
+html[dir="rtl"] .testimonial-card { direction: rtl; text-align: right; }
 .testimonial-quote { color: var(--wine-soft); font-size: 1.6rem; display: block; margin-block-end: 18px; }
 .testimonial-card p { color: var(--ink); font-size: 1rem; line-height: 1.8; margin-block-end: 22px; max-width: none; }
 .testimonial-author { display: flex; flex-direction: column; gap: 3px; padding-block-start: 16px; border-block-start: 1px solid var(--line); }
@@ -605,31 +622,26 @@ section { position: relative; padding-block: 100px; }
 .carousel-indicators .carousel-dot { display: block; }
 
 /* ============================================================
-   11. CLIENTS
-   (.client-item :hover label color lives in desktop.css)
+   11. CLIENTS — seamless logo marquee
    ============================================================ */
-.clients-section { background: var(--stage-raised); }
-.clients-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0;
-    border-top: 1px solid var(--line);
-}
-.client-item {
-    flex: 1 1 160px;
-    text-align: center;
-    padding-block: 28px;
-    border-inline-end: 1px solid var(--line);
-    border-block-end: 1px solid var(--line);
-}
-.client-item span {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--ink-faint);
-    letter-spacing: 0.02em;
-    transition: color 0.3s var(--ease);
+.clients-section { background: var(--stage-raised); overflow: hidden; }
+.clients-marquee { position: relative; overflow: hidden; margin-inline: -24px; padding-block: 8px 12px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.clients-track { display: flex; direction: ltr; width: max-content; animation: clients-marquee 48s linear infinite; will-change: transform; }
+.clients-group { display: flex; flex: none; gap: 18px; padding-inline-end: 18px; }
+.client-item { display: grid; place-items: center; flex: 0 0 clamp(190px, 18vw, 244px); height: 126px; padding: 16px 20px; overflow: hidden; background: #E8EEF0; border: 1px solid rgba(192, 138, 62, 0.16); border-radius: 4px; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14); transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease); }
+.client-logo { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 88px; object-fit: contain; transform: scale(var(--logo-scale, 1)); }
+.client-logo--efrata { --logo-scale: 1.08; }
+.client-logo--hevron  { --logo-scale: 1.04; }
+.client-logo--idf     { --logo-scale: 1.03; }
+.client-logo--malam   { --logo-scale: 1.06; }
+.client-logo--queens  { --logo-scale: 1.04; }
+.client-logo--yiot    { --logo-scale: 1.68; }
+@keyframes clients-marquee { to { transform: translateX(-50%); } }
+.clients-marquee:hover .clients-track, .clients-marquee:focus-within .clients-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+    .clients-marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+    .clients-track { animation: none; }
+    .clients-group[aria-hidden="true"] { display: none; }
 }
 
 /* ============================================================

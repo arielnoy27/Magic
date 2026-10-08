@@ -651,6 +651,75 @@ function initGalleryLightbox() {
    10.  CONTACT FORM
    ============================================================ */
 
+/* ============================================================
+   10.  VIDEO MODAL
+   ============================================================ */
+
+function initVideoModal() {
+    const triggers = $$('[data-video-id]');
+    if (!triggers.length) return;
+
+    triggers.forEach((trigger) => {
+        trigger.addEventListener('click', () => {
+            const videoId = trigger.dataset.videoId;
+            if (!/^[A-Za-z0-9_-]{11}$/.test(videoId || '')) return;
+            openVideoModal(videoId, trigger.dataset.videoTitle || 'Video player', trigger);
+        });
+    });
+
+    function openVideoModal(videoId, title, trigger) {
+        const overlay = document.createElement('div');
+        overlay.className = 'video-modal';
+
+        const dialog = document.createElement('div');
+        dialog.className = 'video-modal__dialog';
+        dialog.setAttribute('role', 'dialog');
+        dialog.setAttribute('aria-modal', 'true');
+        dialog.setAttribute('aria-label', title);
+
+        const frame = document.createElement('iframe');
+        frame.className = 'video-modal__frame';
+        frame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+        frame.title = title;
+        frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        frame.allowFullscreen = true;
+        frame.referrerPolicy = 'strict-origin-when-cross-origin';
+
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'video-modal__close';
+        closeBtn.type = 'button';
+        closeBtn.setAttribute('aria-label', document.documentElement.lang === 'he' ? 'סגירת הסרטון' : 'Close video');
+        closeBtn.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i>';
+
+        dialog.append(frame, closeBtn);
+        overlay.appendChild(dialog);
+        document.body.appendChild(overlay);
+
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+
+        function closeModal() {
+            frame.src = 'about:blank';
+            document.removeEventListener('keydown', handleKeydown);
+            overlay.remove();
+            document.body.style.overflow = previousOverflow;
+            trigger.focus();
+        }
+
+        function handleKeydown(event) {
+            if (event.key === 'Escape') closeModal();
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', (event) => {
+            if (event.target === overlay) closeModal();
+        });
+        document.addEventListener('keydown', handleKeydown);
+    }
+}
+
+
 function initContactForm() {
     const form = document.getElementById('contactForm');
     if (!form) return;
@@ -959,6 +1028,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initStaggerReveal();
     initTestimonialsCarousel();
     initGalleryLightbox();
+    initVideoModal();
     initContactForm();
     initScrollTopButton();
     initScrollProgress();

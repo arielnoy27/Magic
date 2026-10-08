@@ -203,6 +203,8 @@
     .shows-carousel-viewport { overflow: hidden; }
     .shows-grid { display: flex; }
     .shows-grid .show-card { flex: 0 0 100%; width: 100%; }
+    html[dir="rtl"] .shows-grid { direction: ltr; }
+    html[dir="rtl"] .shows-grid .show-card { direction: rtl; text-align: right; }
     .carousel-dots { display: flex; }
 
     .show-card { padding: clamp(28px, 7vw, 36px) clamp(20px, 6vw, 26px); }
@@ -259,31 +261,30 @@
 
 /* =========================================
    MOBILE — CLIENTS
-   =========================================
-   STRUCTURAL CHANGE: the desktop bordered grid of 14 logos
-   becomes a tall wall of names once it's one or two per row —
-   not a real mobile pattern. It becomes a single horizontally
-   swipeable strip instead, which is how a "trusted by" row is
-   commonly and comfortably browsed on a phone. No HTML change
-   needed — the existing list markup works as a scroll row. */
+   ========================================= */
 @media (max-width: 1100px) {
-    .clients-grid {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-        border-block-start: none;
-        border-block-end: 1px solid var(--line);
-        gap: 0;
-    }
     .client-item {
-        flex: 0 0 auto;
-        min-width: 140px;
-        padding-inline: 22px;
-        border-block-end: none;
-        scroll-snap-align: start;
+        flex-basis: 174px;
+        height: 108px;
+        padding: 18px 22px;
     }
+    .client-logo { max-height: 76px; }
+}
+
+@media (max-width: 480px) {
+    .clients-marquee { margin-inline: -18px; }
+    .clients-group { gap: 12px; padding-inline-end: 12px; }
+    .client-item { flex-basis: 154px; height: 96px; padding: 16px 18px; }
+    .client-logo { max-height: 66px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .clients-marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+    .clients-track { animation: none; }
+    .clients-group[aria-hidden="true"] { display: none; }
+    .clients-group { padding-inline: 18px; }
+    .clients-marquee::-webkit-scrollbar { height: 4px; }
+    .clients-marquee::-webkit-scrollbar-thumb { background: var(--line-strong); }
 }
 
 

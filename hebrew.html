@@ -126,13 +126,11 @@
 
                 <div class="experience-video" data-reveal>
                     <div class="video-wrapper">
-                        <iframe
-                            src="https://youtu.be/vUmVnduBFHs"
-                            title="אריאל נוי – קטע מופע קסם"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen loading="lazy">
-                        </iframe>
+                        <button class="video-launch" type="button" data-video-id="vUmVnduBFHs" data-video-title="אריאל נוי – קטע מופע קסם">
+                            <img src="https://i.ytimg.com/vi/vUmVnduBFHs/hqdefault.jpg" alt="אריאל נוי מופיע בקסם" loading="lazy">
+                            <span class="video-launch__play" aria-hidden="true"><i class="fas fa-play"></i></span>
+                            <span class="video-launch__label">לצפייה בקטע המופע</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -148,7 +146,8 @@
                 <p class="section-subtitle">בידור מקצועי המותאם לאירוע, למקום ולרשימת האורחים שלכם.</p>
             </div>
 
-            <div class="shows-grid" id="showsGrid" data-reveal>
+            <div class="shows-carousel-viewport">
+                <div class="shows-grid" id="showsGrid" data-reveal>
                 <article class="show-card">
                     <div class="show-card-accent"></div>
                     <div class="show-card-icon"><i class="fas fa-hand-sparkles"></i></div>
@@ -169,6 +168,7 @@
                     <h3 class="show-card-title">אירועים פרטיים</h3>
                     <p class="show-card-body">מימי הולדת וימי נישואין ועד בר/בת מצווה ומסיבות חג, כל מופע מותאם לחגיגה שלכם. ניתן להתאים את המופע לכל גודל מקום ומספר אורחים, עם תוכן המתאים לקהל היעד הספציפי שלכם — כך שהרגע נשאר אישי, לא גנרי.</p>
                 </article>
+                </div>
             </div>
 
             <div class="carousel-dots" id="showsDots" aria-label="ניווט מופעים">
@@ -285,6 +285,16 @@
                             </footer>
                         </blockquote>
 
+                        <!-- המלצה זמנית — יש להחליף בהמלצה אמיתית לפני פרסום. -->
+                        <blockquote class="testimonial-card">
+                            <i class="fas fa-quote-right testimonial-quote" aria-hidden="true"></i>
+                            <p>״[המלצה זמנית] התהליך כולו היה נעים, מקצועי ומדויק. המופע חיבר בין האורחים והוסיף לאירוע אנרגיה מיוחדת שנשארה איתנו גם אחרי שהערב הסתיים.״</p>
+                            <footer class="testimonial-author">
+                                <strong>לקוח לדוגמה</strong>
+                                <span>מארח אירוע — להחליף לפני הפרסום</span>
+                            </footer>
+                        </blockquote>
+
                     </div>
                 </div>
 
@@ -305,22 +315,26 @@
                 <h2 class="section-title">בין לקוחותינו</h2>
                 <p class="section-subtitle">גאה לבדר צוותים ואורחים בחברות המובילות הללו</p>
             </div>
-            <ul class="clients-grid" data-reveal>
-                <li class="client-item"><span>Google</span></li>
-                <li class="client-item"><span>Microsoft</span></li>
-                <li class="client-item"><span>Intel</span></li>
-                <li class="client-item"><span>Amazon</span></li>
-                <li class="client-item"><span>Facebook</span></li>
-                <li class="client-item"><span>Wix</span></li>
-                <li class="client-item"><span>Mobileye</span></li>
-                <li class="client-item"><span>Google</span></li>
-                <li class="client-item"><span>Microsoft</span></li>
-                <li class="client-item"><span>Intel</span></li>
-                <li class="client-item"><span>Amazon</span></li>
-                <li class="client-item"><span>Facebook</span></li>
-                <li class="client-item"><span>Wix</span></li>
-                <li class="client-item"><span>Mobileye</span></li>
-            </ul>
+            <div class="clients-marquee" dir="ltr" role="region" aria-label="ארגונים שאריאל הופיע עבורם">
+                <div class="clients-track">
+                    <ul class="clients-group">
+                        <li class="client-item"><img class="client-logo client-logo--efrata" src="logos/removeBG/efrata.png" alt="אפרתה" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--hevron" src="logos/removeBG/hevron.png" alt="ישיבת חברון" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--idf" src="logos/removeBG/idf.png" alt="צה״ל" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--malam" src="logos/removeBG/malam-team.png" alt="MalamTeam" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--queens" src="logos/removeBG/queenHebrew2.png" alt="Queens Hebrew Academy" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--yiot" src="logos/removeBG/yiot.png" alt="Young Israel of Tenafly" loading="lazy"></li>
+                    </ul>
+                    <ul class="clients-group" aria-hidden="true">
+                        <li class="client-item"><img class="client-logo client-logo--efrata" src="logos/removeBG/efrata.png" alt="" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--hevron" src="logos/removeBG/hevron.png" alt="" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--idf" src="logos/removeBG/idf.png" alt="" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--malam" src="logos/removeBG/malam-team.png" alt="" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--queens" src="logos/removeBG/queenHebrew2.png" alt="" loading="lazy"></li>
+                        <li class="client-item"><img class="client-logo client-logo--yiot" src="logos/removeBG/yiot.png" alt="" loading="lazy"></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
