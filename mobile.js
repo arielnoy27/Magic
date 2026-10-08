@@ -23,35 +23,59 @@
    ============================================================ */
 
 function initShowsCarousel() {
-    const grid  = $('.shows-grid');
-    const dots  = $$('.carousel-dot', $('#showsDots'));
-    const cards = $$('.show-card');
+    const grid    = $('.shows-grid');
+    const dots    = $$('.carousel-dot', $('#showsDots'));
+    const cards   = $$('.show-card');
+    const prevBtn = $('#showsPrev');
+    const nextBtn = $('#showsNext');
+    const carousel = grid?.closest('.shows-carousel');
 
     if (!grid || !cards.length) return;
 
     let active  = false;
     let current = 0;
+    let autoplayTimer = null;
 
     function activate() {
         if (active) return;
         active = true;
         current = 0;
         goTo(0);
+        startAutoplay();
     }
 
     function deactivate() {
         if (!active) return;
         active = false;
+        stopAutoplay();
         grid.style.transform = '';
     }
 
     function goTo(index) {
-        current = Math.max(0, Math.min(index, cards.length - 1));
+        current = ((index % cards.length) + cards.length) % cards.length;
         grid.style.transform = `translateX(-${current * 100}%)`;
         dots.forEach((dot, i) => dot.classList.toggle('active', i === current));
     }
 
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
     dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+    prevBtn?.addEventListener('click', prev);
+    nextBtn?.addEventListener('click', next);
+
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(next, CONFIG.showsAutoplay);
+    }
+
+    function stopAutoplay() {
+        if (autoplayTimer) clearInterval(autoplayTimer);
+        autoplayTimer = null;
+    }
+
+    carousel?.addEventListener('mouseenter', stopAutoplay);
+    carousel?.addEventListener('mouseleave', () => { if (active) startAutoplay(); });
 
     let startX = 0;
     let dragDelta = 0;
@@ -61,6 +85,7 @@ function initShowsCarousel() {
         if (!active) return;
         startX = e.touches[0].clientX;
         dragging = true;
+        stopAutoplay();
         grid.style.transition = 'none';
     }, { passive: true });
 
@@ -82,6 +107,7 @@ function initShowsCarousel() {
             goTo(current);
         }
         dragDelta = 0;
+        startAutoplay();
     }, { passive: true });
 
     const mq = window.matchMedia('(max-width: 768px)');

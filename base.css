@@ -546,6 +546,7 @@ section { position: relative; padding-block: 100px; }
 .show-card-body { color: var(--ink-muted); font-size: 0.96rem; line-height: 1.75; }
 
 .carousel-dots { display: none; justify-content: center; gap: 10px; margin-block-start: 30px; }
+.shows-carousel .carousel-btn { display: none; }
 .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line-strong); transition: background 0.25s var(--ease), transform 0.25s var(--ease); }
 .carousel-dot.active { background: var(--gold); transform: scale(1.3); }
 

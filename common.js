@@ -62,6 +62,7 @@ const CONFIG = Object.freeze({
     statsCountDuration:   1200,    // ms
     notificationTimeout:  5000,    // ms
     testimonialAutoplay:  7000,    // ms
+    showsAutoplay:        7000,    // ms
     cardsPerView:             3,    // testimonials on desktop
     swipeThreshold:          50,    // px — min swipe distance
 });

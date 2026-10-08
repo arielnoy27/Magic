@@ -156,7 +156,7 @@
 }
 
 @media (max-width: 480px) {
-    .hero { padding-block-start: clamp(24px, 8vw, 40px); }
+    .hero { padding-block-start: calc(var(--nav-height) + clamp(24px, 8vw, 40px)); }
     .hero-title { font-size: clamp(2.5rem, 15vw, 3.2rem); }
 }
 
@@ -200,7 +200,9 @@
    so it can never clip the desktop-only hover lift/shadow on
    .show-card (that only exists in desktop.css, ≥1101px). */
 @media (max-width: 768px) {
-    .shows-carousel-viewport { overflow: hidden; }
+    .shows-carousel { display: flex; align-items: center; gap: 12px; }
+    .shows-carousel-viewport { flex: 1; min-width: 0; overflow: hidden; }
+    .shows-carousel .carousel-btn { display: flex; width: 42px; height: 42px; font-size: 0.85rem; }
     .shows-grid { display: flex; }
     .shows-grid .show-card { flex: 0 0 100%; width: 100%; }
     html[dir="rtl"] .shows-grid { direction: ltr; }
